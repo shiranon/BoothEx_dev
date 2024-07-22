@@ -55,3 +55,4 @@ BOOTHでの3Dモデル購入層をターゲットとしています。
 - フロントエンドはRemixとTailwindCSS,shadcn/ui
 - バージョン管理はGitHub
 - CI/CDはGitHubActions
+- お知らせ用CMSにNewt
