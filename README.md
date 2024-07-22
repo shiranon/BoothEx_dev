@@ -46,13 +46,18 @@ BOOTHでの3Dモデル購入層をターゲットとしています。
 - ブロック機能
 
 ## 選定予定技術
-
 - 全て無料枠で運用予定
-- インフラはAWSを利用
-- 動的機能はAWS Lambdaで実装
-- DBはDynamoDB(無料枠を活用)
-- デプロイ先はCloudflare
-- フロントエンドはRemixとTailwindCSS,shadcn/ui
-- バージョン管理はGitHub
-- CI/CDはGitHubActions
-- お知らせ用CMSにNewt
+
+- 開発環境 Docker
+- バックエンド Cloudflare Pages Functions
+- フロントエンド Remix
+- デザイン TailwindCSS,shadcn/ui
+- デプロイ Cloudflare Pages
+- インフラ
+   ・API: Amazon API Gateway
+   ・データ取得: AWS Lambda
+   ・ファイルサーバ: Cloudflare R2
+   ・データベースサーバ: Amazon DynamoDB
+- バージョン管理 GitHub
+- CI/CD GitHubActions
+- CMS Newt
