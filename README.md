@@ -63,4 +63,4 @@ BOOTHでの3Dモデル購入層をターゲットとしています。
 - CMS Newt
 
 ## 画面遷移図
-- Figma: https://www.figma.com/design/Xx1tCNx0belvOAJ2cOM4pq/BoothEX?node-id=0-1&t=9knTjisTs3ncM6hR-1
+- Figma: https://www.figma.com/design/Xx1tCNx0belvOAJ2cOM4pq/BoothEX
