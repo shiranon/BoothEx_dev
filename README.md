@@ -54,10 +54,13 @@ BOOTHでの3Dモデル購入層をターゲットとしています。
 - デザイン TailwindCSS,shadcn/ui
 - デプロイ Cloudflare Pages
 - インフラ
-   ・API: Amazon API Gateway
-   ・データ取得: AWS Lambda
-   ・ファイルサーバ: Cloudflare R2
-   ・データベースサーバ: Amazon DynamoDB
+   ・API: Amazon API Gateway  
+   ・データ取得: AWS Lambda  
+   ・ファイルサーバ: Cloudflare R2  
+   ・データベースサーバ: Amazon DynamoDB  
 - バージョン管理 GitHub
 - CI/CD GitHubActions
 - CMS Newt
+
+## 画面遷移図
+- Figma: https://www.figma.com/design/Xx1tCNx0belvOAJ2cOM4pq/BoothEX
