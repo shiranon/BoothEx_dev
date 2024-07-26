@@ -64,3 +64,6 @@ BOOTHでの3Dモデル購入層をターゲットとしています。
 
 ## 画面遷移図
 - Figma: https://www.figma.com/design/Xx1tCNx0belvOAJ2cOM4pq/BoothEX
+
+## ER図
+https://www.mermaidchart.com/raw/07177631-a5eb-4ee4-bacb-8e1d87d92ae2
