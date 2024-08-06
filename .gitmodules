@@ -1,0 +1,6 @@
+[submodule "boothex"]
+	path = boothex
+	url = https://github.com/shiranon/boothex_remix.git
+[submodule "python3"]
+	path = python3
+	url = https://github.com/shiranon/booth_python.git
