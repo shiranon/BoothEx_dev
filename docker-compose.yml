@@ -1,0 +1,68 @@
+x-common-variables: &common-variables
+  AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+  AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+  AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+  AWS_REGION: ${AWS_REGION}
+  DYNAMO_ENDPOINT: http://dynamodb-local:8000
+
+services:
+  app:
+    image: node:current-slim
+    container_name: app
+    ports:
+      - 3000:3000
+      - 6006:6006
+    depends_on:
+      - "dynamodb-local"
+    environment:
+      TZ: Asia/Tokyo
+      <<: *common-variables
+    working_dir: /usr/src/app
+    volumes:
+      - ./boothex:/usr/src/app
+    stdin_open: true
+    tty: true
+    networks:
+      - mynetwork
+  dynamodb-local:
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    image: "amazon/dynamodb-local:latest"
+    container_name: dynamodb-local
+    ports:
+      - "8000:8000"
+    volumes:
+      - ".dynamodb:/home/dynamodblocal/data"
+    working_dir: /home/dynamodblocal
+    networks:
+      - mynetwork
+  dynamodb-admin:
+    image: "aaronshaf/dynamodb-admin:latest"
+    ports:
+      - "8001:8001"
+    environment:
+      <<: *common-variables
+    networks:
+      - mynetwork
+    depends_on:
+      dynamodb-local:
+        condition: service_started
+  python3:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./.docker/python3/Dockerfile
+    container_name: python3
+    depends_on:
+      - "dynamodb-local"
+    environment:
+      <<: *common-variables
+    working_dir: /usr/src/python3
+    tty: true
+    volumes:
+      - ./python3:/usr/src/python3
+    command: tail -f /dev/null
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
